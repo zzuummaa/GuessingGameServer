@@ -1,4 +1,4 @@
-name: Run tests on any Push event
+name: Run on any Push event
 # Запуск при любом push евенте в любой ветке, за исключением релизных тэгов.
 # Они будт тестироваться перед сборкой
 on:
@@ -9,7 +9,6 @@ on:
       - 'master'
 jobs:
   build_and_pub:
-    needs: [run_tests]
     runs-on: [ubuntu-latest]
     env:
       LOGIN: ${{ secrets.DOCKER_LOGIN }}
